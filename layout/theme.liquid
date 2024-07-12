@@ -14,7 +14,25 @@
       <main id="main" role="main">
         {{ content_for_layout}}
         </main>
+        <div id="demoBanner" class="demo-banner">
+          <button onclick="closeBanner()">X</button>
+          <p>This is a demo clone store created for educational purposes only. No
+          orders will be processed. All rights related to Nike
+          trademarks and products are reserved to Nike.</p>
+        </div>
 
         {% section 'footer' %}
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('bannerClosed') === 'true') {
+              document.getElementById('demoBanner').style.display = 'none';
+            }
+          });
+
+          function closeBanner() {
+            document.getElementById('demoBanner').style.display = 'none';
+            localStorage.setItem('bannerClosed', 'true');
+          }
+        </script>
   </body>
 </html>

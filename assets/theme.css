@@ -9,6 +9,49 @@ h1 {
   text-transform: uppercase;
 }
 
+.demo-banner {
+  position: fixed;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  background-color: #d2d4d5;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.demo-banner button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.demo-banner p {
+  font-size: 12px;
+}
+
+.demo-banner button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 468px) {
+  .demo-banner {
+    font-size: 10px;
+  }
+
+  .demo-banner p {
+    margin-top: 15px;
+  }
+}
+
 /* announcement bar */
 
 .announcement-bar {
