@@ -1,0 +1,73 @@
+<section class="all-products">
+  <h1>{{ collections['best-sellers'].title }}</h1>
+  <div class="products-container">
+    <div class="all-products-wrapper">
+      {% for product in collections['best-sellers'].products %}
+        <div class="product-card">
+          <img
+            width="300"
+            height="300"
+            loading="lazy"
+            src="{{ product.featured_image | image_url }}" alt="{{ product.title}}"
+          >
+          <h3 class="product-title">{{ product.title | link_to: product.url }}</h3>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .products-container {
+    position: relative;
+    overflow-x: scroll;
+  }
+
+  .all-products-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card {
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .product-card a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "all-products",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#F7F7F7"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#000000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "all-products"
+      }
+    ]
+  }
+  {% endschema %}

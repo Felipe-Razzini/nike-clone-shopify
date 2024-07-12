@@ -1,0 +1,216 @@
+<footer class="footer-main">
+  <div class="footer-sec-1">
+    {% if section.blocks.size == 0 %}
+      <div class="footer-links">
+        <p class="dropdown-link"><strong>Resources</strong></p>
+        <p class="footer-link">Gift Cards</p>
+        <p class="footer-link">Find a Store</p>
+        <p class="footer-link">Become a Member</p>
+        <p class="footer-link">Nike x NBA</p>
+        <p class="footer-link">Nike Journal</p>
+        <p class="footer-link">Site Feedback</p>
+      </div>
+
+      <div class="footer-links">
+        <p class="dropdown-link"><strong>Help</strong></p>
+        <p class="footer-link">Get Help</p>
+        <p class="footer-link">Order Status</p>
+        <p class="footer-link">Shipping and Delivery</p>
+        <p class="footer-link">Returns</p>
+        <p class="footer-link">Order Cancellation</p>
+        <p class="footer-link">Payment Options</p>
+        <p class="footer-link">Gift Card Balance</p>
+        <p class="footer-link">Contact Us</p>
+      </div>
+
+      <div class="footer-links">
+        <p class="dropdown-link"><strong>Company</strong></p>
+        <p class="footer-link">About Nike</p>
+        <p class="footer-link">News</p>
+        <p class="footer-link">Careers</p>
+        <p class="footer-link">Investors</p>
+        <p class="footer-link">Purpose</p>
+        <p class="footer-link">Sustainability</p>
+      </div>
+
+      <div class="footer-links">
+        <p class="dropdown-link"><strong>Promotions & Discounts</strong></p>
+        <p class="footer-link">Student</p>
+        <p class="footer-link">Military</p>
+        <p class="footer-link">Teacher</p>
+        <p class="footer-link">First Responders & <br>Medical Professionals</p>
+        <p class="footer-link">Birthday</p>
+      </div>
+
+    {% else %}
+      {% for block in section.blocks %}
+        <div>
+          <li>
+            <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
+          </li>
+          <li>
+            <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
+          </li>
+          <li>
+            <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
+          </li>
+          <li>
+            <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
+          </li>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="footer-sec-2">
+    <p>© 2024 Nike, Inc. All Rights Reserved</p>
+    <p>Guides</p>
+    <p>Terms of Sale</p>
+    <p>Terms of Use</p>
+    <p>Nike Privacy Policy</p>
+    <p>Your Privacy Choices</p>
+    <p>CA Supply Chains Act</p>
+  </div>
+</footer>
+
+<style>
+  .footer-main {
+    color: #707072;
+    padding: 48px;
+  }
+
+  .footer-main p:not(.dropdown-link) {
+    cursor: pointer;
+  }
+
+  .footer-sec-1 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .dropdown-link {
+    color: #111111;
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-link {
+    margin: 0;
+  }
+
+  .footer-sec-2 {
+    margin-top: 72px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer-sec-2 p {
+    padding: 10px;
+    margin: 0;
+  }
+
+  .footer-sec-2 p:hover {
+    color: black;
+  }
+
+  @media (max-width: 992px) {
+    .footer-links {
+      width: 100%;
+      border-bottom: 1px solid #7070723c;
+    }
+
+    .dropdown-link {
+      padding-block: 24px;
+      margin: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-link:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .footer-sec-1, .footer-sec-2 {
+      justify-content: start;
+      display: block;
+    }
+
+    .footer-link {
+      display: none; /* Initially hide the dropdown content */
+    }
+
+    .footer-link.show {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggles = document.querySelectorAll('.dropdown-link');
+
+    toggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+        if (window.innerWidth <= 992) {
+          // Find the parent container
+          const parentContainer = this.closest('.footer-links');
+          // Select all .footer-link elements within the parent container
+          const footerLinks = parentContainer.querySelectorAll('.footer-link');
+
+          // Toggle display for each .footer-link
+          footerLinks.forEach(function(link) {
+            link.classList.toggle('show');
+          });
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    }, {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#F7F7F7"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Links",
+      "type": "links",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "link"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "footer"
+    }
+  ]
+}
+{% endschema %}
