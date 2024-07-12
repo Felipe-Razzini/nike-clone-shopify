@@ -43,9 +43,7 @@
 <style>
   .collection-sec {
     color: {{ section.settings.text_color }};
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
   }
 
   .products-grid {
@@ -73,6 +71,18 @@
   .product-title a:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 

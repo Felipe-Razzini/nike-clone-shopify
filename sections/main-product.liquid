@@ -1,14 +1,14 @@
 <section class="product-main">
   <div class="product-main-wrapper">
-      <img
-        width="396"
-        height="465"
-        loading="lazy"
-        src="{{ product.featured_image | image_url }}"
-        alt="{{ product.title}}"
-        class="product-image"
-      >
-    <div>
+    <img
+      width="396"
+      height="465"
+      loading="lazy"
+      src="{{ product.featured_image | image_url }}"
+      alt="{{ product.title}}"
+      class="product-image"
+    >
+    <div class="product-description">
       <h2>{{ product.title }}</h2>
       <p>{{ product.price | money }}</p>
       <p>{{ product.description }}</p>
@@ -21,9 +21,8 @@
             </option>
           {% endfor %}
         </select>
+        <button type="submit">Add to Cart</button>
       {% endform %}
-      <button type="submit">Add to Cart</button>
-      <input type="submit" value="Add to cart">
     </div>
   </div>
 </section>
@@ -40,17 +39,35 @@
     justify-content: center;
   }
 
+  .product-description button {
+    display: block;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
   .product-main-wrapper > .product-image {
     flex: 0 1 50%;
-    max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
-    height: auto; /* Maintains the image's aspect ratio */
-    object-fit: contain; /* Ensures the image fits within its bounds, maintaining aspect ratio */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
 }
 
-.product-main-wrapper > div:last-child {
-    flex: 0 1 50%; /* Allows this div to shrink if necessary but not grow beyond 40% */
-}
+  .product-main-wrapper > div:last-child {
+      flex: 0 1 50%;
+  }
+
+  @media (max-width: 768px) {
+    .product-main-wrapper {
+      flex-direction: column;
+    }
+  }
 </style>
 
 {% schema %}

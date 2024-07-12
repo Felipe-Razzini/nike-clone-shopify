@@ -6,6 +6,7 @@
       </div>
     {% else %}
       <div>
+        <h1>cart</h1>
         {% for item in cart.items %}
           <img
             width="200"
@@ -19,11 +20,10 @@
 
           <hr>
           <input name="updates[]" value="{{item.quantity}}">
-          <a href="{{ item.url_to_remove }}">Remove</a>
+          <a class="remove-button" href="{{ item.url_to_remove }}">Remove from Cart</a>
           <p>Total: {{ cart.total_price | money }}</p>
         {% endfor %}
-        <button type="submit" name="update">Update</button>
-        <button type="submit" name="checkout">Checkout</button>
+        <button class="cart-button" type="submit" name="checkout">Checkout</button>
       </div>
     {% endif %}
   </section>
@@ -32,10 +32,24 @@
 <style>
   .cart-sec {
     background-color: rgb(226, 226, 226);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 30px 50px;
     height: 100vh;
+  }
+
+  .cart-button {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .remove-button {
+    text-decoration: underline;
+    color: inherit;
   }
 </style>
 

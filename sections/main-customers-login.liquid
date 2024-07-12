@@ -36,7 +36,7 @@
   }
 
   .login-section h2 {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     font-size: 40px;
   }
 
@@ -67,6 +67,8 @@
   .login-form input[type='submit'] {
     background-color: black;
     color: #fff;
+    font-weight: bold;
+    font-size: 15px;
     cursor: pointer;
   }
 
@@ -80,10 +82,43 @@
   .login-form div {
     margin-bottom: 10px;
   }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .login-section h2 {
+      font-size: 32px;
+    }
+
+    .login-form {
+      width: 90%;
+      height: auto;
+      padding: 10px;
+    }
+
+    .login-form input {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login-section {
+      height: auto;
+      padding: 20px 0;
+    }
+
+    .login-section h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .login-form {
+      box-shadow: none;
+    }
+  }
 </style>
 
 {% schema %}
 {
-  "name": "login",
+  "name": "login"
 }
 {% endschema %}
