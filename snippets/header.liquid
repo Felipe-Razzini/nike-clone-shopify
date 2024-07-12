@@ -1,0 +1,35 @@
+<header class="header-navbar">
+  <div>
+    <a href="/">
+      <img
+        width="80"
+        height="50"
+        loading="lazy"
+        src={{' nike.png' |  asset_url}} alt="Nike"
+      >
+    </a>
+  </div>
+
+  <div>
+    <ul class="middle-navbar">
+      {% for link in linklists['main-menu'].links %}
+        <li>{{ link.title | link_to: link.url }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="right-navbar-items">
+    <form action="/search">
+      <input class="search-navbar" placeholder="Search" type="search">
+    </form>
+
+    <a href="/">
+      <img
+        width="40"
+        height="40"
+        loading="lazy"
+        src={{' d.png' |  asset_url}} alt="Cart"
+      >
+    </a>
+  </div>
+</header>
