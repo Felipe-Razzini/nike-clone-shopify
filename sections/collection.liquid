@@ -45,7 +45,7 @@
     color: {{ section.settings.text_color }};
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .products-grid {
@@ -63,6 +63,16 @@
   .product-card img {
     max-width: 100%;
     height: auto;
+  }
+
+  .product-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .product-title a:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 </style>
 

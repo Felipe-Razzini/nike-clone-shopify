@@ -1,13 +1,13 @@
 <section class="product-main">
   <div class="product-main-wrapper">
-    <div>
       <img
-        width="600"
-        height="600"
+        width="396"
+        height="465"
         loading="lazy"
-        src="{{ product.featured_image | image_url }}" alt="{{ product.title}}"
+        src="{{ product.featured_image | image_url }}"
+        alt="{{ product.title}}"
+        class="product-image"
       >
-    </div>
     <div>
       <h2>{{ product.title }}</h2>
       <p>{{ product.price | money }}</p>
@@ -31,12 +31,26 @@
 <style>
   .product-main {
     color: {{ section.settings.text_color }};
-    padding: 10px;
+    padding: 30px;
   }
 
   .product-main-wrapper {
     display: flex;
+    gap: 20px;
+    justify-content: center;
   }
+
+  .product-main-wrapper > .product-image {
+    flex: 0 1 50%;
+    max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
+    height: auto; /* Maintains the image's aspect ratio */
+    object-fit: contain; /* Ensures the image fits within its bounds, maintaining aspect ratio */
+    border-radius: 8px;
+}
+
+.product-main-wrapper > div:last-child {
+    flex: 0 1 50%; /* Allows this div to shrink if necessary but not grow beyond 40% */
+}
 </style>
 
 {% schema %}

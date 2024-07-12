@@ -2,6 +2,49 @@
   {% render 'header' %}
 </nav>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Toggle for the navbar
+  var toggleButton = document.querySelector('.navbar-toggle');
+  var navbar = document.querySelector('.middle-navbar');
+
+  toggleButton.addEventListener('click', function(e) {
+    navbar.classList.toggle('active');
+    e.stopPropagation();
+  });
+
+  // Toggle for the search icon and search input
+  var searchIcon = document.querySelector('.search-icon');
+  var searchInput = document.querySelector('.search-navbar');
+
+  searchIcon.addEventListener('click', function(e) {
+    // Toggle visibility based on current state
+    if (searchInput.style.display === 'block') {
+      searchInput.style.display = 'none';
+    } else {
+      searchInput.style.display = 'block';
+      searchInput.focus(); // Focus the input when shown
+    }
+    e.stopPropagation(); // Prevents click from closing immediately
+  });
+
+  // Close navbar or search input when clicking outside
+  document.addEventListener('click', function(event) {
+    var target = event.target;
+
+    // If the click is outside the navbar and not on the toggle button, hide the navbar
+    if (!navbar.contains(target) && !toggleButton.contains(target) && navbar.classList.contains('active')) {
+      navbar.classList.remove('active');
+    }
+
+    // If the click is outside the search input and not on the search icon, hide the search input
+    if (!searchInput.contains(target) && !searchIcon.contains(target) && searchInput.style.display === 'block') {
+      searchInput.style.display = 'none';
+    }
+  });
+});
+</script>
+
 {% schema %}
   {
     "name": "Navbar",

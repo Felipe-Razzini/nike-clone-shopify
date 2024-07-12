@@ -59,6 +59,16 @@
   .one-user, .two-user, .three-user {
     background-image: url(" {{ section.settings.image | image_url }}");
   }
+
+  @media (max-width: 468px) {
+  .three, .three-user {
+    display: none;
+  }
+
+  .image-style {
+    width: 50%;
+  }
+}
 </style>
 
 {% schema %}

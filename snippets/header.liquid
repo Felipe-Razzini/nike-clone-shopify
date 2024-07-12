@@ -10,6 +10,7 @@
     </a>
   </div>
 
+  <button class="navbar-toggle" aria-label="Toggle navigation">Menu</button>
   <div>
     <ul class="middle-navbar">
       {% for link in linklists['main-menu'].links %}
@@ -19,11 +20,14 @@
   </div>
 
   <div class="right-navbar-items">
-    <form action="/search">
-      <input class="search-navbar" placeholder="Search" type="search">
+    <form action="/search" class="search-form">
+      <div class="search-wrapper">
+        <input class="search-navbar" placeholder="Search" type="search">
+        <img src="{{ 'search.svg' | asset_url }}" alt="search icon" class="search-icon">
+      </div>
     </form>
 
-    <a href="/">
+    <a href="/cart">
       <img
         width="40"
         height="40"

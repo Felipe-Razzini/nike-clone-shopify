@@ -1,0 +1,38 @@
+<section>
+  {% if search.performed %}
+    <h1>Search Page</h1>
+    <div>
+      {% for result in search.results %}
+        <p>{{ result.object_type }}</p>
+      {% endfor %}
+  {%  else %}
+    <h1>No Results found.</h1>
+    </div>
+  {% endif %}
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "search",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#F7F7F7"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#000000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "search"
+      }
+    ]
+  }
+  {% endschema %}
