@@ -2,6 +2,8 @@
 
 This project is a clone of a Nike e-commerce store, built using Shopify and Liquid. The store features a selection of products, a shopping cart, and checkout functionality, all styled to mimic the look and feel of Nike's official online store.
 
+To explore the store, please get in touch and I'll share the password. The link is `https://just-do-it-clone.myshopify.com/`.
+
 ## Features
 
 - Product listings: Browse a curated selection of products inspired by Nike's offerings.
@@ -18,10 +20,6 @@ This project is a clone of a Nike e-commerce store, built using Shopify and Liqu
 ## Disclaimer
 
 This project is for educational and demonstration purposes only. It is not affiliated with, endorsed by, or in any way officially connected with Nike.
-
-## Getting Started
-
-To explore the store, please get in touch and I'll share the password. The link is `https://just-do-it-clone.myshopify.com/`.
 
 ## Visuals (desktop and mobile)
 
