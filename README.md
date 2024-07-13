@@ -31,6 +31,9 @@ To explore the store, please get in touch and I'll share the password. The link 
 
 <img width="523" alt="image" src="https://github.com/user-attachments/assets/390014e1-61f0-4d11-8391-9e725a93fcbb">
 
-<img width="143" alt="image" src="https://github.com/user-attachments/assets/1b4cf6eb-928b-4f77-be8c-46033fc4f0fe">
-
-<img width="143" alt="image" src="https://github.com/user-attachments/assets/e9d24674-8443-4eb6-9d18-02dd3d54cce4">
+<p>
+  <img width="143" alt="image" src="https://github.com/user-attachments/assets/1b4cf6eb-928b-4f77-be8c-46033fc4f0fe">
+</p>
+<p>
+  <img width="143" alt="image" src="https://github.com/user-attachments/assets/e9d24674-8443-4eb6-9d18-02dd3d54cce4">
+</p>
