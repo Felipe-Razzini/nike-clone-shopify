@@ -25,4 +25,10 @@ To explore the store, please get in touch and I'll share the password. The link 
 
 ## Visuals
 
-
+**Desktop**
+<img width="527" alt="image" src="https://github.com/user-attachments/assets/5b318ded-46ca-4448-900c-c90ac26a5d3a">
+<img width="530" alt="image" src="https://github.com/user-attachments/assets/ba62f3c1-2dc2-4dd6-b297-97675af523a8">
+<img width="523" alt="image" src="https://github.com/user-attachments/assets/390014e1-61f0-4d11-8391-9e725a93fcbb">
+**Mobile**
+<img width="143" alt="image" src="https://github.com/user-attachments/assets/1b4cf6eb-928b-4f77-be8c-46033fc4f0fe">
+<img width="143" alt="image" src="https://github.com/user-attachments/assets/e9d24674-8443-4eb6-9d18-02dd3d54cce4">
